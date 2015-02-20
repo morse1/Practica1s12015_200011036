@@ -4,22 +4,22 @@ package Clases;
  */
 public class Lista {
 
-    Nodo_Lista cabeza;
+    public Nodo_Lista cabeza;
    
+    /*********************** constructor de la clase Lista **********************************************/
     
     public Lista ()
     {
         cabeza = null;
     }
     
+    /******************** método para verificar si la lista usuario esta vacía *************************/
     public boolean ListaVacia ()
     {
         
-        
-        if (cabeza == null)
+    if (cabeza == null)
         {
-            System.out.println("Lista vacia");
-            return true;
+        return true;
         }
         else
         {
@@ -27,6 +27,7 @@ public class Lista {
         }
     }
     
+    /************************** método insertar en lista usuario **************************************/
     
     public void insertar(String name, int cant, String campos)
     {
@@ -43,6 +44,8 @@ public class Lista {
           cabeza = nuevo;
         }
     }
+    /******************************* metodo que recorre la lista usuario *********************************/
+    
     public String recorrer()
     {
          String dato = "";

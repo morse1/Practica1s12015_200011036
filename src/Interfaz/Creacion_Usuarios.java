@@ -1,8 +1,10 @@
 
 package Interfaz;
 
+import Clases.Global;
+import Clases.Lista;
+
 /**
- *
  * @author MorseIván
  */
 public class Creacion_Usuarios extends javax.swing.JFrame {

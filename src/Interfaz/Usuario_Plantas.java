@@ -1,13 +1,14 @@
 package Interfaz;
 
 import Clases.Lista;
+import Clases.Global;
 import javax.swing.JOptionPane;
 
 /**
  * @author MorseIván
  */
 public class Usuario_Plantas extends javax.swing.JFrame {
-Lista lis = new Lista();
+//Lista lis = new Lista();
 Dimensiones_Tablero t = new Dimensiones_Tablero();
 String extra,n,s;
     /**
@@ -34,7 +35,7 @@ String extra,n,s;
         jLabel4 = new javax.swing.JLabel();
         TfCantidad = new javax.swing.JTextField();
         TfNombre = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnAgregarCampos = new javax.swing.JButton();
         btnCrear = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         area = new javax.swing.JTextArea();
@@ -51,10 +52,10 @@ String extra,n,s;
 
         jLabel4.setText("Cantidad:");
 
-        jButton1.setText("Agregar mas campos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarCampos.setText("Agregar mas campos");
+        btnAgregarCampos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAgregarCamposActionPerformed(evt);
             }
         });
 
@@ -82,7 +83,7 @@ String extra,n,s;
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(51, 51, 51)
-                            .addComponent(jButton1)
+                            .addComponent(btnAgregarCampos)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                             .addComponent(btnCrear))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -93,11 +94,10 @@ String extra,n,s;
                             .addGap(18, 18, 18)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(TfCantidad, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                                .addComponent(TfNombre)))))
-                .addContainerGap(102, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TfNombre))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -116,7 +116,7 @@ String extra,n,s;
                             .addComponent(TfCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
+                            .addComponent(btnAgregarCampos)
                             .addComponent(btnCrear)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(58, 58, 58)
@@ -130,20 +130,15 @@ String extra,n,s;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+        Lista lis = new Lista();
         lis.insertar(TfNombre.getText(), Integer.parseInt(TfCantidad.getText()) , n);
-        lis.insertar("hola", 5 , "adios");
-        lis.insertar("majo" , 22 , "te amo");
-        //Dimensiones_Tablero dt = new Dimensiones_Tablero();
-        
-        s =  lis.recorrer();
-        t.a = s;     
- 
+
+        Global.getInstance().usuario = lis;
         t.setVisible(true);
         dispose();
-        System.out.println(""+s);
     }//GEN-LAST:event_btnCrearActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnAgregarCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarCamposActionPerformed
         
         String extra = "" ,s = "";
         String cantidad = JOptionPane.showInputDialog("Ingrese cuantos campos desea agregar: ");
@@ -155,8 +150,8 @@ String extra,n,s;
             s = s + extra + " ";
             i++;
         }
-     n = s;
-    }//GEN-LAST:event_jButton1ActionPerformed
+         n = s;
+    }//GEN-LAST:event_btnAgregarCamposActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,8 +193,8 @@ String extra,n,s;
     private javax.swing.JTextField TfCantidad;
     private javax.swing.JTextField TfNombre;
     private javax.swing.JTextArea area;
+    private javax.swing.JButton btnAgregarCampos;
     private javax.swing.JButton btnCrear;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

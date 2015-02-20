@@ -4,10 +4,10 @@ package Clases;
  */
 public class Nodo_Lista {
     
-    String Nombre;
-    int Cantidad;
-    String Campos;
-    Nodo_Lista sig;
+    public String Nombre;
+    public int Cantidad;
+    public String Campos;
+    public Nodo_Lista sig;
 
     
     Nodo_Lista(String nom, int cant, String camp)
@@ -17,6 +17,4 @@ public class Nodo_Lista {
         Campos = camp;
         sig = null;
     }
-    
-    
 }
