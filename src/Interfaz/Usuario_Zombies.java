@@ -5,12 +5,18 @@
  */
 package Interfaz;
 
+import Clases.Global;
+import Clases.Estructuras.Lista;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author MorseIván
  */
 public class Usuario_Zombies extends javax.swing.JFrame {
 
+    Dimensiones_Tablero t = new Dimensiones_Tablero();
+    String n;
     /**
      * Creates new form Usuario_Zombies
      */
@@ -33,9 +39,10 @@ public class Usuario_Zombies extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        TfNombre = new javax.swing.JTextField();
+        TfCantidad = new javax.swing.JTextField();
+        btnMasCampos = new javax.swing.JButton();
+        btnCrearUsZombie = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PLANTAS VS ZOMBIES GUATEMALTECO 1.0");
@@ -49,7 +56,19 @@ public class Usuario_Zombies extends javax.swing.JFrame {
 
         jLabel4.setText("Cantidad:");
 
-        jButton1.setText("jButton1");
+        btnMasCampos.setText("Agregar mas campos");
+        btnMasCampos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMasCamposActionPerformed(evt);
+            }
+        });
+
+        btnCrearUsZombie.setText("Crear Usuario");
+        btnCrearUsZombie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCrearUsZombieActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,14 +81,19 @@ public class Usuario_Zombies extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnMasCampos)
+                        .addGap(135, 135, 135)
+                        .addComponent(btnCrearUsZombie))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TfCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -83,18 +107,47 @@ public class Usuario_Zombies extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TfCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnMasCampos)
+                    .addComponent(btnCrearUsZombie))
                 .addGap(0, 17, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnMasCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasCamposActionPerformed
+        String extra  ,s = "";
+        String cantidad = JOptionPane.showInputDialog("Ingrese cuantos campos desea agregar: ");
+        int num = Integer.parseInt(cantidad);
+        int i = 1;
+        while (i <= num)
+        {
+            extra = JOptionPane.showInputDialog("Campo: " + i);
+            s = s + extra + " ";
+            i++;
+        }
+         n = s;
+
+    }//GEN-LAST:event_btnMasCamposActionPerformed
+
+    private void btnCrearUsZombieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUsZombieActionPerformed
+        Lista lis = Global.getInstance().usuario;
+        if (lis == null)
+        {
+            lis = new Lista();
+        }
+        lis.insertar(TfNombre.getText(), Integer.parseInt(TfCantidad.getText()) , n, 2);
+        Global.getInstance().usuario = lis;
+       // t.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_btnCrearUsZombieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -132,12 +185,13 @@ public class Usuario_Zombies extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTextField TfCantidad;
+    private javax.swing.JTextField TfNombre;
+    private javax.swing.JButton btnCrearUsZombie;
+    private javax.swing.JButton btnMasCampos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

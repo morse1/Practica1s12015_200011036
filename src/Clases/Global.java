@@ -1,4 +1,8 @@
 package Clases;
+
+import Clases.Estructuras.Lista;
+import Clases.Estructuras.ListaPlantas;
+
 /**
  * @author MorseIván
  */
@@ -23,7 +27,7 @@ public class Global {
 
     
     public Lista usuario;
-    
+    public ListaPlantas plantas;
     
     
 }

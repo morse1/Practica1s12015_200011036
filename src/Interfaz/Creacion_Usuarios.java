@@ -2,7 +2,7 @@
 package Interfaz;
 
 import Clases.Global;
-import Clases.Lista;
+import Clases.Estructuras.Lista;
 
 /**
  * @author MorseIván
@@ -32,6 +32,9 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
         btnComenzarJuego = new javax.swing.JButton();
         btnEliminarDatosUsuarios = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        area = new javax.swing.JTextArea();
+        btnVerLista = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PLANTS VS ZOMBIES GUATEMALTECO 1.0");
@@ -64,8 +67,24 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
         btnEliminarDatosUsuarios.setText("Eliminar Datos");
         btnEliminarDatosUsuarios.setMaximumSize(new java.awt.Dimension(113, 23));
         btnEliminarDatosUsuarios.setMinimumSize(new java.awt.Dimension(113, 23));
+        btnEliminarDatosUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarDatosUsuariosActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Presentacion.jpg"))); // NOI18N
+
+        area.setColumns(20);
+        area.setRows(5);
+        jScrollPane1.setViewportView(area);
+
+        btnVerLista.setText("ver lista ");
+        btnVerLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerListaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -73,18 +92,23 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnComenzarJuego)
+                            .addGap(102, 102, 102)
+                            .addComponent(btnEliminarDatosUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(btnJugadorZombies, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnJugadorPlantas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnComenzarJuego)
-                        .addGap(102, 102, 102)
-                        .addComponent(btnEliminarDatosUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnJugadorZombies, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnJugadorPlantas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 19, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVerLista)))
+                .addGap(0, 54, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -101,7 +125,14 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnEliminarDatosUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnComenzarJuego))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(btnVerLista)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -114,15 +145,29 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
     private void btnJugadorPlantasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorPlantasActionPerformed
         Usuario_Plantas UP = new Usuario_Plantas();
         UP.setVisible(true);
-        dispose();
+       // dispose();
         
     }//GEN-LAST:event_btnJugadorPlantasActionPerformed
 
     private void btnJugadorZombiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorZombiesActionPerformed
         Usuario_Zombies UZ = new Usuario_Zombies();
         UZ.setVisible(true);
-        dispose();
+       // dispose();
     }//GEN-LAST:event_btnJugadorZombiesActionPerformed
+
+    private void btnVerListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerListaActionPerformed
+        // TODO add your handling code here:
+        Lista list = Global.getInstance().usuario;
+        String ele; 
+        ele = list.recorrer_cola();
+        area.setText(ele);
+    }//GEN-LAST:event_btnVerListaActionPerformed
+
+    private void btnEliminarDatosUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarDatosUsuariosActionPerformed
+        Lista l = Global.getInstance().usuario;
+        l.vaciarLista();
+        area.setText("Lista vacia");
+    }//GEN-LAST:event_btnEliminarDatosUsuariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,10 +205,13 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea area;
     private javax.swing.JButton btnComenzarJuego;
     private javax.swing.JButton btnEliminarDatosUsuarios;
     private javax.swing.JButton btnJugadorPlantas;
     private javax.swing.JButton btnJugadorZombies;
+    private javax.swing.JButton btnVerLista;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

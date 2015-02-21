@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Clases;
+package Clases.Estructuras;
 
 /**
  *
  * @author MorseIván
  */
-public class Nodo_Cola {
+public class Lista_Zombies {
     
 }
