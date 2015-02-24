@@ -1,4 +1,4 @@
-    package Clases.Estructuras;
+package Clases.Estructuras;
 
 import Clases.Nodos.NodoPlantasZombies;
 import javax.swing.Icon;
@@ -10,7 +10,7 @@ public class Lista_Zombies {
 
     public NodoPlantasZombies nini;
     public NodoPlantasZombies nfin;
-    public String nom, tipa;
+    public String nom, tipoa;
     public int puA, puD;
     public Icon imag;
     
@@ -67,13 +67,17 @@ public class Lista_Zombies {
           
            public void sacarDatos()
       {
-      nom = nini.Nombre;
-      tipa = nini.Tipo_Ataque;
-      puA = nini.Puntos_Ataque;
-      puD = nini.Puntos_Defensa;
-      imag = nini.Imagen;
-      nini = nini.sig;
-      
+          if (nini != null)
+          {
+                nom = nini.Nombre;
+                puA = nini.Puntos_Ataque;
+                puD = nini.Puntos_Defensa;
+                imag = nini.Imagen;
+                tipoa = nini.Tipo_Ataque;
+                
+                nini = nini.sig;
+                System.out.println("Nombre: " + nom);
+          }
       }
         
     }

@@ -6,8 +6,6 @@ import Clases.Estructuras.ListaPlantas;
 import Clases.Estructuras.Lista_Zombies;
 import Clases.Estructuras.Matriz;
 import Clases.Estructuras.Pila;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 /**
  * @author MorseIván
  */

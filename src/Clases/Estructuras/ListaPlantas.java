@@ -1,8 +1,9 @@
 package Clases.Estructuras;
 
 
-import Clases.Global;
+
 import Clases.Nodos.NodoPlantasZombies;
+
 //import Clases.Nodos.Nodo_Plantas;
 import javax.swing.Icon;
 
@@ -13,7 +14,6 @@ public class ListaPlantas {
 
     public NodoPlantasZombies nfinal;
     public NodoPlantasZombies ninicio;
-    public NodoPlantasZombies temp;
     public String nom, tipa;
     public int puA, puD;
     public Icon imag;
@@ -79,18 +79,19 @@ public class ListaPlantas {
           nfinal = null;
       }
       
-      public void sacarDatos()
+      public void sacarDatosNodo()
       {
-          ninicio = ninicio.sig;
-//System.out.println("Dato agregado a cola");
-      /*nom = ninicio.Nombre;
-      tipa = ninicio.Tipo_Ataque;
-      puA = ninicio.Puntos_Ataque;
-      puD = ninicio.Puntos_Defensa;
-      imag = ninicio.Imagen;
-      
-          System.out.println("no: "+nom);*/
-      
+            
+            if (ninicio != null)
+            {
+                nom = ninicio.Nombre;
+                tipa = ninicio.Tipo_Ataque;
+                puA = ninicio.Puntos_Ataque;
+                puD = ninicio.Puntos_Defensa;
+                imag = ninicio.Imagen;
+                ninicio = ninicio.sig;
+                
+            }
       }
 }
 

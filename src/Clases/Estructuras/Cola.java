@@ -10,8 +10,12 @@ import javax.swing.Icon;
  */
 public class Cola {
 
-    NodoPlantasZombies ninicio;
-    NodoPlantasZombies nfinal;
+    public NodoPlantasZombies ninicio;
+    public NodoPlantasZombies nfinal;
+    public String nom, tipa;
+    public int puA, puD;
+    public Icon imag;
+
     
     public Cola ()
     {
@@ -50,7 +54,16 @@ public class Cola {
     
     public void sacarCola ()
     {
-        ninicio = ninicio.sig;
+        
+        if (ninicio != null )
+        {
+                nom = ninicio.Nombre;
+                tipa = ninicio.Tipo_Ataque;
+                puA = ninicio.Puntos_Ataque;
+                puD = ninicio.Puntos_Defensa;
+                imag = ninicio.Imagen;
+                ninicio = ninicio.sig;
+        }
     }
     
     public String recorrer_cola()
@@ -60,7 +73,7 @@ public class Cola {
         
         while (auxiliar != null)
           {
-                dato += auxiliar.Imagen +" , "+auxiliar.Nombre+", "+auxiliar.Tipo_Ataque+", "+auxiliar.Puntos_Ataque+", "+auxiliar.Puntos_Defensa;
+                dato += auxiliar.Imagen +" , "+auxiliar.Nombre+", "+auxiliar.Tipo_Ataque+", "+auxiliar.Puntos_Ataque+", "+auxiliar.Puntos_Defensa + "\n";
                 auxiliar = auxiliar.sig;
           }
         return dato;

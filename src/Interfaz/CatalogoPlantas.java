@@ -3,7 +3,7 @@ package Interfaz;
 import Clases.Estructuras.ListaPlantas;
 import Clases.Global;
 import javax.swing.Icon;
-import javax.swing.JOptionPane;
+
 
 /**
  * @author MorseIván
@@ -184,8 +184,6 @@ int contador=0;
                     {
                         lblImagen.setIcon(ic);
                     }
-                    
-        
     }//GEN-LAST:event_btnImagenActionPerformed
 
     private void btnPlantaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlantaActionPerformed
@@ -193,12 +191,9 @@ int contador=0;
         if (contador < a){
         contador++;
             contar();   
-            System.out.println("Clicks: "+ contador + " Cantidad: " +a);
         }
         else
         {
-        JOptionPane.showMessageDialog(null, "Ingrese listado de zombies");
-            System.out.println("Clicks: "+ contador + " Cantidad: " +a);
         dispose();
         }
     }//GEN-LAST:event_btnPlantaActionPerformed
@@ -278,5 +273,8 @@ public void contar ()
         lblImagen.setIcon(null);
         
         }
-        
+ 
+
+
+
 }

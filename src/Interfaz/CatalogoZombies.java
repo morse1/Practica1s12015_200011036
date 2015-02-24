@@ -194,16 +194,11 @@ int contador = 0;
         if (contador < a){
         contador++;
             contar();   
-            System.out.println("Clicks: "+ contador + " Cantidad: " +a);
         }
         else
         {
-        JOptionPane.showMessageDialog(null, "Ingrese listado de zombies");
-            System.out.println("Clicks: "+ contador + " Cantidad: " +a);
         dispose();
-
-
-        }
+       }
                 
     }//GEN-LAST:event_btnZombieActionPerformed
 
