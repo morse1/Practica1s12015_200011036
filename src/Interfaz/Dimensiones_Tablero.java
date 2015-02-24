@@ -6,7 +6,7 @@
 package Interfaz;
 
 
-import Clases.Estructuras.Lista;
+import Clases.Estructuras.ListaUsuario;
 import Clases.Global;
 
 /**
@@ -121,7 +121,7 @@ public class Dimensiones_Tablero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         Lista lis = Global.getInstance().usuario;
+         ListaUsuario lis = Global.getInstance().usuario;
          String a = "";
         if (lis != null)
         {

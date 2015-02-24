@@ -1,18 +1,19 @@
 package Clases.Estructuras;
 
-import Clases.Nodos.Nodo_Lista;
+import Clases.Nodos.Nodo_Usuario;
 
 /*
  * @author MorseIván
  */
-public class Lista {
+public class ListaUsuario {
 
-    public Nodo_Lista nfinal;
-    public Nodo_Lista ninicio;
-   
+    public Nodo_Usuario nfinal;
+    public Nodo_Usuario ninicio;
+    public String cantidad;
+    
     /*********************** constructor de la clase Lista **********************************************/
     
-    public Lista ()
+    public ListaUsuario ()
     {
         nfinal = null;
         ninicio = null;
@@ -36,7 +37,7 @@ public class Lista {
     
     public void insertar(String name, int cant, String campos, int tipo)
     {
-        Nodo_Lista nuevo = new Nodo_Lista(name, cant, campos, tipo);
+        Nodo_Usuario nuevo = new Nodo_Usuario(name, cant, campos, tipo);
         
         if (ListaVacia())
         {
@@ -59,7 +60,7 @@ public class Lista {
     public String recorrer_cola()
     {
         String dato = "";
-        Nodo_Lista auxiliar = ninicio;
+        Nodo_Usuario auxiliar = ninicio;
         
         while (auxiliar != null)
           {
@@ -73,7 +74,7 @@ public class Lista {
      public String recorrer_pila()
     {
         String dato = "";
-        Nodo_Lista auxiliar = nfinal;
+        Nodo_Usuario auxiliar = nfinal;
         while (auxiliar != null)
           {
                 dato += auxiliar.Nombre + ", " + auxiliar.Cantidad + ", " + auxiliar.Campos + "\n";
@@ -89,5 +90,15 @@ public class Lista {
      {
          ninicio = nfinal = null;
      }
-     
+
+    public String getCant() {
+        return cantidad;
     }
+
+    public void setCant(String cant) {
+        this.cantidad = cant;
+    }
+ 
+     
+     
+}

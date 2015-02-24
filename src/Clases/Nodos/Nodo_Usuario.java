@@ -5,20 +5,20 @@ package Clases.Nodos;
 import Clases.Estructuras.ListaPlantas;
 import Clases.Estructuras.Lista_Zombies;
 
-public class Nodo_Lista {
+public class Nodo_Usuario {
     
     public String Nombre;
     public int Cantidad;
     public String Campos;
     public int tipo;
-    public Nodo_Lista sig;
-    public Nodo_Lista ant;
+    public Nodo_Usuario sig;
+    public Nodo_Usuario ant;
     public ListaPlantas objplantas;
     public Lista_Zombies objzombies;
    
   
     
-    public Nodo_Lista(String nom, int cant, String camp, int tip)
+    public Nodo_Usuario(String nom, int cant, String camp, int tip)
     {
         this.Nombre = nom;
         this.Cantidad = cant;

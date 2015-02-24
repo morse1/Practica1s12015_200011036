@@ -1,14 +1,22 @@
 package Clases.Estructuras;
 
-import Clases.Nodos.Nodo_Plantas;
+
+import Clases.Global;
+import Clases.Nodos.NodoPlantasZombies;
+//import Clases.Nodos.Nodo_Plantas;
+import javax.swing.Icon;
 
 /**
  * @author MorseIván
  */
 public class ListaPlantas {
 
-    public Nodo_Plantas nfinal;
-    public Nodo_Plantas ninicio;
+    public NodoPlantasZombies nfinal;
+    public NodoPlantasZombies ninicio;
+    public NodoPlantasZombies temp;
+    public String nom, tipa;
+    public int puA, puD;
+    public Icon imag;
     
     public ListaPlantas ()
     {
@@ -21,19 +29,21 @@ public class ListaPlantas {
     {
         if (nfinal == null && ninicio == null)
         {
+            System.out.println("vacia");
             return true;
         }
         else
         {
+            System.out.println("llena");
             return false;
         }
     }
     
     /************************** METODO INSERTAR A LISTA PLANTAS **********************************/
     
-    public void insertar(String im, String nom, String ta, int pa, int pd)
+    public void insertarPlantas(Icon im, String nom, String ta, int pa, int pd)
     {
-        Nodo_Plantas nuevo = new Nodo_Plantas(im, nom, ta, pa, pd);
+        NodoPlantasZombies nuevo = new NodoPlantasZombies(im, nom, ta, pa, pd);
         
         if (ListaPlantaVacia())
         {
@@ -45,9 +55,42 @@ public class ListaPlantas {
             nfinal = nuevo;
     }
     
-    /*************************** METODO PARA RECORRER LA LISTA ************************************/
+    /*************************** METODO PARA RECORRER LA LISTA
+     * @return  ************************************/
     
+      public String recorrer_Plantas()
+    {
+        String dato = "";
+        NodoPlantasZombies auxiliar = ninicio;
+        
+        while (auxiliar != null)
+          {
+                dato += auxiliar.Imagen +"," +auxiliar.Nombre+","+auxiliar.Tipo_Ataque+","+auxiliar.Puntos_Ataque+","+auxiliar.Puntos_Defensa + "\n";
+                auxiliar = auxiliar.sig;
+          }
+        return dato;
+    }
     
-    
+      /*************************** METODO PARA VACIAR LA LISTA ************************************/
+      
+      public void vaciarListaPlantas ()
+      {
+          ninicio = null;
+          nfinal = null;
+      }
+      
+      public void sacarDatos()
+      {
+          ninicio = ninicio.sig;
+//System.out.println("Dato agregado a cola");
+      /*nom = ninicio.Nombre;
+      tipa = ninicio.Tipo_Ataque;
+      puA = ninicio.Puntos_Ataque;
+      puD = ninicio.Puntos_Defensa;
+      imag = ninicio.Imagen;
+      
+          System.out.println("no: "+nom);*/
+      
+      }
 }
 

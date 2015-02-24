@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Interfaz;
 
 import Clases.Global;
-import Clases.Estructuras.Lista;
+import Clases.Estructuras.ListaUsuario;
 import javax.swing.JOptionPane;
 
 /**
@@ -35,7 +30,6 @@ public class Usuario_Zombies extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -43,18 +37,23 @@ public class Usuario_Zombies extends javax.swing.JFrame {
         TfCantidad = new javax.swing.JTextField();
         btnMasCampos = new javax.swing.JButton();
         btnCrearUsZombie = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PLANTAS VS ZOMBIES GUATEMALTECO 1.0");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/zombie1.png"))); // NOI18N
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setText("ZOMBIE");
+        jLabel1.setText("ZOMBIES");
 
         jLabel3.setText("Nombre:");
 
         jLabel4.setText("Cantidad:");
+
+        TfCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TfCantidadKeyTyped(evt);
+            }
+        });
 
         btnMasCampos.setText("Agregar mas campos");
         btnMasCampos.addActionListener(new java.awt.event.ActionListener() {
@@ -70,60 +69,66 @@ public class Usuario_Zombies extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Presentaciones/Zombie1.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addGap(45, 45, 45)
-                .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnMasCampos)
-                        .addGap(135, 135, 135)
-                        .addComponent(btnCrearUsZombie))
+                        .addContainerGap()
+                        .addComponent(jLabel5)
+                        .addGap(71, 71, 71)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TfCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(TfCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(btnMasCampos)
+                                .addGap(174, 174, 174)
+                                .addComponent(btnCrearUsZombie)))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(66, 66, 66)
-                        .addComponent(jLabel1)))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(75, 75, 75)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(TfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(TfCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TfCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMasCampos)
                     .addComponent(btnCrearUsZombie))
-                .addGap(0, 17, Short.MAX_VALUE))
+                .addGap(41, 41, 41))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMasCamposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasCamposActionPerformed
-        String extra  ,s = "";
+        String extra,s="";
         String cantidad = JOptionPane.showInputDialog("Ingrese cuantos campos desea agregar: ");
         int num = Integer.parseInt(cantidad);
         int i = 1;
@@ -138,16 +143,27 @@ public class Usuario_Zombies extends javax.swing.JFrame {
     }//GEN-LAST:event_btnMasCamposActionPerformed
 
     private void btnCrearUsZombieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUsZombieActionPerformed
-        Lista lis = Global.getInstance().usuario;
+        ListaUsuario lis = Global.getInstance().usuario;
         if (lis == null)
         {
-            lis = new Lista();
+            lis = new ListaUsuario();
         }
         lis.insertar(TfNombre.getText(), Integer.parseInt(TfCantidad.getText()) , n, 2);
         Global.getInstance().usuario = lis;
-       // t.setVisible(true);
+        Global.getInstance().nombre_Us_Zombie = TfNombre.getText();
+        Global.getInstance().cantidad_Zombie = Integer.parseInt(TfCantidad.getText());
+       
         dispose();
     }//GEN-LAST:event_btnCrearUsZombieActionPerformed
+
+    private void TfCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TfCantidadKeyTyped
+        char c=evt.getKeyChar(); 
+          if(Character.isLetter(c)) 
+          { 
+              getToolkit().beep(); 
+              evt.consume(); 
+          } 
+    }//GEN-LAST:event_TfCantidadKeyTyped
 
     /**
      * @param args the command line arguments
@@ -190,8 +206,8 @@ public class Usuario_Zombies extends javax.swing.JFrame {
     private javax.swing.JButton btnCrearUsZombie;
     private javax.swing.JButton btnMasCampos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

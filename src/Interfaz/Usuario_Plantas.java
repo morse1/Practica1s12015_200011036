@@ -1,16 +1,17 @@
 package Interfaz;
 
-import Clases.Estructuras.Lista;
+import Clases.Estructuras.ListaUsuario;
 import Clases.Global;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 
 /**
  * @author MorseIván
  */
 public class Usuario_Plantas extends javax.swing.JFrame {
-//Lista lis = new Lista();
-Dimensiones_Tablero t = new Dimensiones_Tablero();
-Usuario_Zombies uz = new Usuario_Zombies();
+//Lista lis = new ListaUsuario();
+//Dimensiones_Tablero t = new Dimensiones_Tablero();
+//Usuario_Zombies uz = new Usuario_Zombies();
 String n;
     /**
      * Creates new form Usuario_Zombies
@@ -38,12 +39,11 @@ String n;
         TfNombre = new javax.swing.JTextField();
         btnAgregarCampos = new javax.swing.JButton();
         btnCrear = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PLANTAS VS ZOMBIES GUATEMALTECO 1.0");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/planta1.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Presentaciones/Planta1.png"))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("PLANTA");
@@ -51,6 +51,12 @@ String n;
         jLabel3.setText("Nombre:");
 
         jLabel4.setText("Cantidad:");
+
+        TfCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                TfCantidadKeyTyped(evt);
+            }
+        });
 
         btnAgregarCampos.setText("Agregar mas campos");
         btnAgregarCampos.addActionListener(new java.awt.event.ActionListener() {
@@ -66,13 +72,6 @@ String n;
             }
         });
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -80,15 +79,9 @@ String n;
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabel1)
-                                .addGap(0, 64, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1))))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(70, 70, 70)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(51, 51, 51)
@@ -109,14 +102,12 @@ String n;
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
-                    .addComponent(jLabel2))
-                .addGap(27, 27, 27)
+                        .addGap(34, 34, 34)
+                        .addComponent(jLabel1)))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(TfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -135,14 +126,17 @@ String n;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        Lista lis = Global.getInstance().usuario;
+        ListaUsuario lis = Global.getInstance().usuario;
         if (lis == null)
         {
-            lis = new Lista();
+            lis = new ListaUsuario();
         }
         lis.insertar(TfNombre.getText(), Integer.parseInt(TfCantidad.getText()) , n, 1);
         Global.getInstance().usuario = lis;
-       // t.setVisible(true);
+       
+        Global.getInstance().nombre_Us_Planta = TfNombre.getText();
+        Global.getInstance().cantidad_Planta = Integer.parseInt(TfCantidad.getText());
+       
         dispose();
     }//GEN-LAST:event_btnCrearActionPerformed
 
@@ -161,10 +155,16 @@ String n;
          n = s;
     }//GEN-LAST:event_btnAgregarCamposActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        t.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void TfCantidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TfCantidadKeyTyped
+        char c=evt.getKeyChar(); 
+             
+         
+          if(Character.isLetter(c)) { 
+              getToolkit().beep(); 
+               
+              evt.consume(); 
+          }
+    }//GEN-LAST:event_TfCantidadKeyTyped
 
     /**
      * @param args the command line arguments
@@ -207,10 +207,12 @@ String n;
     private javax.swing.JTextField TfNombre;
     private javax.swing.JButton btnAgregarCampos;
     private javax.swing.JButton btnCrear;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
+
+    
+    
 }
