@@ -1,12 +1,12 @@
 
 package Interfaz;
 
-import Clases.Estructuras.Cola;
+//import Clases.Estructuras.Cola;
 import Clases.Global;
 import Clases.Estructuras.ListaUsuario;
-import Clases.Estructuras.ListaPlantas;
-import Clases.Estructuras.Lista_Zombies;
-import Clases.Estructuras.Pila;
+import Clases.Estructuras.Estructuras;
+//import Clases.Estructuras.Lista_Zombies;
+//import Clases.Estructuras.Pila;
 import Clases.Nodos.NodoPlantasZombies;
 import Clases.Nodos.Nodo_Usuario;
 import Clases.Tiempo;
@@ -24,8 +24,8 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
         
     }
 
-    private ListaPlantas _lp;
-    private Lista_Zombies _lz;
+    private Estructuras _lp;
+    private Estructuras _lz;
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -285,13 +285,13 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerPlantasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerPlantasActionPerformed
-         ListaPlantas lp = Global.getInstance().plantas;
+         Estructuras lp = Global.getInstance().plantas;
           if (lp == null)
         {
-            lp = new ListaPlantas("p");
+            lp = new Estructuras("p");
         }
         Global.getInstance().plantas = lp;
-        area.setText(Global.getInstance().plantas.recorrer_Plantas());
+        area.setText(Global.getInstance().plantas.recorrer());
     }//GEN-LAST:event_btnVerPlantasActionPerformed
 
     private void btnJugadorPlantasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugadorPlantasActionPerformed
@@ -323,13 +323,13 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEliminarDatosUsuariosActionPerformed
 
     private void btnVerZombiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerZombiesActionPerformed
-        Lista_Zombies lp = Global.getInstance().zombies;
+        Estructuras lp = Global.getInstance().zombies;
           if (lp == null)
         {
-            lp = new Lista_Zombies("z");
+            lp = new Estructuras("z");
         }
         Global.getInstance().zombies = lp;
-        area1.setText(Global.getInstance().zombies.recorrer_Zombies());
+        area1.setText(Global.getInstance().zombies.recorrer());
     }//GEN-LAST:event_btnVerZombiesActionPerformed
 
     
@@ -377,68 +377,68 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
     private void btnComenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComenzarActionPerformed
         Tiempo t = new Tiempo();
         //ListaPlantas lp = Global.getInstance().plantas;
-        Cola c = Global.getInstance().cola;
+        Estructuras c = Global.getInstance().cola;
         
         int a = (Integer)Global.getInstance().cantidad_Planta ;
         
         for (int i = 1; i<=a; i++)
         {
             
-      Global.getInstance().plantas.sacarDatosNodo();
+      Global.getInstance().plantas.sacarLista();
       t.sacar();
 
         if (c == null)
        {
-            c = new Cola();
+            c = new Estructuras(Global.getInstance().nombre_Us_Planta);
         }
-    c.insertarCola(Global.getInstance().plantas.imag, Global.getInstance().plantas.nom,Global.getInstance().plantas.tipa,Global.getInstance().plantas.puA , Global.getInstance().plantas.puD );
+    c.Insertar(Global.getInstance().plantas.imag, Global.getInstance().plantas.nom,Global.getInstance().plantas.tipa,Global.getInstance().plantas.puA , Global.getInstance().plantas.puD, 1 );
     Global.getInstance().cola = c;
       
         }
     }//GEN-LAST:event_btnComenzarActionPerformed
 
     private void btnVerColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerColaActionPerformed
-         Cola lp = Global.getInstance().cola;
+         Estructuras lp = Global.getInstance().cola;
           if (lp == null)
         {
-            lp = new Cola();
+            lp = new Estructuras(Global.getInstance().nombre_Us_Planta);
         }
         Global.getInstance().cola = lp;
-        area3.setText(Global.getInstance().cola.recorrer_cola());
+        area3.setText(Global.getInstance().cola.recorrer());
 
     }//GEN-LAST:event_btnVerColaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
                 Tiempo t = new Tiempo();
         
-        Pila p = Global.getInstance().pila;
+        Estructuras p = Global.getInstance().pila;
         
         int a = (Integer)Global.getInstance().cantidad_Zombie ;
         
         for (int i = 1; i<=a; i++)
         {
             
-      Global.getInstance().zombies.sacarDatos();
+      Global.getInstance().zombies.sacarLista();
       t.sacar();
 
         if (p == null)
        {
-            p = new Pila();
+            p = new Estructuras(Global.getInstance().nombre_Us_Zombie);
         }
-    p.insertarPila(Global.getInstance().zombies.imag, Global.getInstance().zombies.nom,Global.getInstance().zombies.tipoa,Global.getInstance().zombies.puA , Global.getInstance().zombies.puD );
+    p.Insertar(Global.getInstance().zombies.imag, Global.getInstance().zombies.nom,Global.getInstance().zombies.tipa,Global.getInstance().zombies.puA , Global.getInstance().zombies.puD ,1);
     Global.getInstance().pila = p;
       
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        Pila p = Global.getInstance().pila;
+        Estructuras p = Global.getInstance().pila;
           if (p == null)
         {
-            p = new Pila();
+            p = new Estructuras(Global.getInstance().nombre_Us_Zombie);
         }
         Global.getInstance().pila = p;
-        area4.setText(Global.getInstance().pila.recorrer_pila());
+        area4.setText(Global.getInstance().pila.recorrer());
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -448,8 +448,8 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
         ListaUsuario lobj = Global.getInstance().usuario;
         Nodo_Usuario nus = lobj.ninicio;
         NodoPlantasZombies npz;
-        ListaPlantas lpla;
-        Lista_Zombies lzob;
+        Estructuras lpla;
+        Estructuras lzob;
         while ( nus != null)
         {
             sb.append ( nus.npadre + "->" + nus.nhijo + ";\n"  );
@@ -461,7 +461,7 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
                 npz = npz.sig;
             }
             lzob = nus.objzombies;
-            npz = lzob.nini;
+            npz = lzob.ninicio;
             while ( npz != null)
             {
                 sb.append ( npz.npadre + "->" + npz.nhijo + ";\n"  );

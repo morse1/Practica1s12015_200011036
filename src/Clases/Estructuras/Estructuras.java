@@ -1,16 +1,12 @@
 package Clases.Estructuras;
 
-
-
 import Clases.Nodos.NodoPlantasZombies;
-
-//import Clases.Nodos.Nodo_Plantas;
 import javax.swing.Icon;
 
 /**
  * @author MorseIván
  */
-public class ListaPlantas {
+public class Estructuras {
 
     public NodoPlantasZombies nfinal;
     public NodoPlantasZombies ninicio;
@@ -20,35 +16,34 @@ public class ListaPlantas {
     public Icon imag;
     public String nlista = "lplanta";
     
-    public ListaPlantas (String nombre)
+    public Estructuras (String nombre)
     {
         nfinal = null;
         ninicio = null;
         nlista = nombre;
     }
 
-    /************************************ VERIFICA SI LA LISTA ESTA VACIA*************/
-    public boolean ListaPlantaVacia ()
+    /************************************ VERIFICA SI LA LISTA ESTA VACI
+     * @return A*************/
+    public boolean EstructuraVacia ()
     {
         if (nfinal == null && ninicio == null)
         {
-            System.out.println("vacia");
             return true;
         }
         else
         {
-            System.out.println("llena");
             return false;
         }
     }
     
     /************************** METODO INSERTAR A LISTA PLANTAS **********************************/
     
-    public void insertarPlantas(Icon im, String nom, String ta, int pa, int pd)
+    public void Insertar(Icon im, String nom, String ta, int pa, int pd, int in)
     {
-        NodoPlantasZombies nuevo = new NodoPlantasZombies(im, nom, ta, pa, pd);
+        NodoPlantasZombies nuevo = new NodoPlantasZombies(im, nom, ta, pa, pd, in);
         
-        if (ListaPlantaVacia())
+        if (EstructuraVacia())
         {
             nuevo.npadre = nlista;
             ninicio = nuevo;
@@ -70,14 +65,14 @@ public class ListaPlantas {
     /*************************** METODO PARA RECORRER LA LISTA
      * @return  ************************************/
     
-      public String recorrer_Plantas()
+      public String recorrer()
     {
         String dato = "";
         NodoPlantasZombies auxiliar = ninicio;
         
         while (auxiliar != null)
           {
-                dato += auxiliar.Imagen +"," +auxiliar.Nombre+","+auxiliar.Tipo_Ataque+","+auxiliar.Puntos_Ataque+","+auxiliar.Puntos_Defensa + "\n";
+                dato += auxiliar.Imagen +"," +auxiliar.Nombre+","+auxiliar.Tipo_Ataque+","+auxiliar.Puntos_Ataque+","+auxiliar.Puntos_Defensa + ", "+auxiliar.indice+"\n";
                 auxiliar = auxiliar.sig;
           }
         return dato;
@@ -85,13 +80,13 @@ public class ListaPlantas {
     
       /*************************** METODO PARA VACIAR LA LISTA ************************************/
       
-      public void vaciarListaPlantas ()
+      public void vaciarEstructura ()
       {
           ninicio = null;
           nfinal = null;
       }
       
-      public void sacarDatosNodo()
+      public void sacarLista()
       {
             
             if (ninicio != null)
@@ -105,5 +100,32 @@ public class ListaPlantas {
                 
             }
       }
+      
+      
+      public void SacarCola()
+      {
+      if (ninicio != null )
+        {
+                nom = ninicio.Nombre;
+                tipa = ninicio.Tipo_Ataque;
+                puA = ninicio.Puntos_Ataque;
+                puD = ninicio.Puntos_Defensa;
+                imag = ninicio.Imagen;
+                ninicio = ninicio.sig;
+        }
+      }
+      
+      public void SacarPila ()
+    {
+        if (nfinal != null)
+        {
+            nom = ninicio.Nombre;
+            tipa = ninicio.Tipo_Ataque;
+            puA = ninicio.Puntos_Ataque;
+            puD = ninicio.Puntos_Defensa;
+            imag = ninicio.Imagen;
+            nfinal = nfinal.ant;
+        }
+    }
 }
 

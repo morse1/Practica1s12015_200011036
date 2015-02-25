@@ -2,8 +2,8 @@ package Clases.Nodos;
 /*
  * @author MorseIván
  */
-import Clases.Estructuras.ListaPlantas;
-import Clases.Estructuras.Lista_Zombies;
+import Clases.Estructuras.Estructuras;
+//import Clases.Estructuras.Lista_Zombies;
 
 public class Nodo_Usuario {
     
@@ -13,8 +13,9 @@ public class Nodo_Usuario {
     public int tipo;
     public Nodo_Usuario sig;
     public Nodo_Usuario ant;
-    public ListaPlantas objplantas;
-    public Lista_Zombies objzombies;
+    public Estructuras objplantas;
+  //  public Lista_Zombies objzombies;
+    public Estructuras objzombies;
     public String npadre;
     public String nhijo;
   
@@ -27,7 +28,8 @@ public class Nodo_Usuario {
         this.tipo  = tip;
         sig = null;
         ant =  null;
-        objplantas = new ListaPlantas(nom);
-        objzombies = new Lista_Zombies(nom);
+        objplantas = new Estructuras(nom);
+        //objzombies = new Lista_Zombies(nom);
+        objzombies = new Estructuras(nom);
     }
 }

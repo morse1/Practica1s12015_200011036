@@ -1,14 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Clases.Nodos;
 
 import javax.swing.Icon;
-
 /**
- *
  * @author MorseIván
  */
 public class NodoPlantasZombies {
@@ -22,15 +15,15 @@ public class NodoPlantasZombies {
     public NodoPlantasZombies ant;
     public String npadre;
     public String nhijo;
-    
+    public int indice;
 
-public NodoPlantasZombies(Icon im, String nom, String ta, int pa, int pd)
+public NodoPlantasZombies(Icon im, String nom, String ta, int pa, int pd, int in)
  {
     Imagen = im;
     Nombre = nom;
     Tipo_Ataque = ta;
     Puntos_Ataque = pa;
     Puntos_Defensa = pd;
-
+    indice = in;
  }
 }

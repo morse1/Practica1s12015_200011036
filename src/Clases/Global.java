@@ -1,11 +1,11 @@
 package Clases;
 
-import Clases.Estructuras.Cola;
+//import Clases.Estructuras.Cola;
 import Clases.Estructuras.ListaUsuario;
-import Clases.Estructuras.ListaPlantas;
-import Clases.Estructuras.Lista_Zombies;
+import Clases.Estructuras.Estructuras;
+//import Clases.Estructuras.Lista_Zombies;
 import Clases.Estructuras.Matriz;
-import Clases.Estructuras.Pila;
+//import Clases.Estructuras.Pila;
 /**
  * @author MorseIván
  */
@@ -30,11 +30,14 @@ public class Global {
 
     
     public ListaUsuario usuario;
-    public ListaPlantas plantas;
-    public Lista_Zombies zombies;
+    public Estructuras plantas;
+//    public Lista_Zombies zombies;
+    public Estructuras zombies;
     public Matriz tablero;
-    public Cola cola;
-    public Pila pila;
+    public Estructuras cola;
+    public Estructuras pila;
+//    public Cola cola;
+    //public Pila pila;
     public int cantidad_Planta;
     public String nombre_Us_Planta;
     public int cantidad_Zombie;

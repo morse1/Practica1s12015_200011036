@@ -1,6 +1,6 @@
 package Interfaz;
 
-import Clases.Estructuras.ListaPlantas;
+import Clases.Estructuras.Estructuras;
 import Clases.Global;
 import javax.swing.Icon;
 
@@ -23,7 +23,7 @@ int contador=0;
         setResizable(false); 
     }
 
-    public ListaPlantas lplantas;
+    public Estructuras lplantas;
     
     
     /**
@@ -264,12 +264,12 @@ public void contar ()
         pdef = Integer.parseInt((String)cbDefensa.getSelectedItem());
         pata = Integer.parseInt((String)cbPAtaque.getSelectedItem());
                 
-        ListaPlantas lz = lplantas;
+        Estructuras lz = lplantas;
 //        if (lz == null)
 //        {
-//            lz = new ListaPlantas("p");
+//            lz = new Estructuras("p");
 //        }
-        lz.insertarPlantas(lblImagen.getIcon(), TfNombre.getText(), TipoAtaque ,pdef, pata);
+        lz.Insertar(lblImagen.getIcon(), TfNombre.getText(), TipoAtaque ,pdef, pata, contador);
         Global.getInstance().plantas = lz;
         
         TfNombre.setText("");
