@@ -27,7 +27,7 @@ public class Nodo_Usuario {
         this.tipo  = tip;
         sig = null;
         ant =  null;
-        objplantas = new ListaPlantas();
-        objzombies = new Lista_Zombies();
+        objplantas = new ListaPlantas(nom);
+        objzombies = new Lista_Zombies(nom);
     }
 }

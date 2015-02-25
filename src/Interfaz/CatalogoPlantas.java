@@ -23,6 +23,9 @@ int contador=0;
         setResizable(false); 
     }
 
+    public ListaPlantas lplantas;
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -261,11 +264,11 @@ public void contar ()
         pdef = Integer.parseInt((String)cbDefensa.getSelectedItem());
         pata = Integer.parseInt((String)cbPAtaque.getSelectedItem());
                 
-        ListaPlantas lz = Global.getInstance().plantas;
-        if (lz == null)
-        {
-            lz = new ListaPlantas();
-        }
+        ListaPlantas lz = lplantas;
+//        if (lz == null)
+//        {
+//            lz = new ListaPlantas("p");
+//        }
         lz.insertarPlantas(lblImagen.getIcon(), TfNombre.getText(), TipoAtaque ,pdef, pata);
         Global.getInstance().plantas = lz;
         

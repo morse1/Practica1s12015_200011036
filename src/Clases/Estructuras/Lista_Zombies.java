@@ -10,17 +10,19 @@ public class Lista_Zombies {
 
     public NodoPlantasZombies nini;
     public NodoPlantasZombies nfin;
+    public NodoPlantasZombies nanterior;
     public String nom, tipoa;
     public int puA, puD;
     public Icon imag;
-    public String nlista = "lplanta";
+    public String nlista = "lzombie";
     
     
     
-    public Lista_Zombies ()
+    public Lista_Zombies (String nombre)
     {
         nini = null;
         nfin = null;
+        nlista = nombre;
     }
     
     public boolean ListaVaciaZombies()
@@ -33,7 +35,7 @@ public class Lista_Zombies {
             return false;
     }
         
-        public void insertarZombies (Icon im, String nom, String ta, int pa, int pd)
+    public void insertarZombies (Icon im, String nom, String ta, int pa, int pd)
         {
          NodoPlantasZombies nuevo = new NodoPlantasZombies (im, nom, ta, pa, pd);   
             
@@ -41,11 +43,17 @@ public class Lista_Zombies {
          {
              nini = nuevo;
              nfin = nuevo;
+             nuevo.npadre = nlista;
          }
-         
-         nuevo.ant = nfin;
-         nfin.sig = nuevo;
+         else
+         {
+             nuevo.npadre = nanterior.Nombre;
+             nuevo.ant = nfin;
+             nfin.sig = nuevo;
+         }
+          nuevo.nhijo = nuevo.Nombre;
          nfin = nuevo;
+         nanterior = nuevo;
         }
         
           public String recorrer_Zombies()

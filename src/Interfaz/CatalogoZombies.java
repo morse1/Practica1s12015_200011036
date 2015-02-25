@@ -21,7 +21,7 @@ String TipoAtaque = "";
 int pdef;
 int pata;
 int contador = 0;
-
+public Lista_Zombies lzombies;
     /**
      * Creates new form CatalogoZombies
      */
@@ -271,15 +271,14 @@ public void contar()
         TipoAtaque = (String)cbAtaque.getSelectedItem();
         pdef = Integer.parseInt((String)cbDefensa.getSelectedItem());
         pata = Integer.parseInt((String)cbPAtaque.getSelectedItem());
-                
-        Lista_Zombies lz = Global.getInstance().zombies;
-        if (lz == null)
-        {
-            lz = new Lista_Zombies();
-        }
+        Lista_Zombies lz = lzombies;
+//        Lista_Zombies lz = Global.getInstance().zombies;
+//        if (lz == null)
+//        {
+//            lz = new Lista_Zombies("z");
+//        }
         lz.insertarZombies(lblImagen.getIcon(), TfNombre.getText(), TipoAtaque ,pdef, pata);
         Global.getInstance().zombies = lz;
-
         TfNombre.setText("");
         lblImagen.setIcon(null);
 }

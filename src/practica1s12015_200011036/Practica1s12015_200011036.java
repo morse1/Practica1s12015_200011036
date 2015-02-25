@@ -21,6 +21,7 @@ public class Practica1s12015_200011036 {
         //new Usuario_Zombies().setVisible(true);
         //new CatalogoZombies().setVisible(true);      
         new Inicio().setVisible(true);
+        //new TableroDeJuego().setVisible(true);
     }
     
 }

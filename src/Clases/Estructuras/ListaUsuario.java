@@ -45,18 +45,21 @@ public class ListaUsuario {
         
         if (ListaVacia())
         {
+         
          ninicio = nuevo;
-         ninicio.npadre = nlista;
          nfinal = nuevo; 
+         ninicio.npadre = nlista;
         }
         else
         {
-          nanterior.nhijo = nuevo.Nombre;
-          nuevo.npadre = nuevo.Nombre;
+          nuevo.npadre = nanterior.Nombre;   
+        }
+         
+          nuevo.nhijo = nuevo.Nombre;
           nuevo.ant = nfinal;
           nfinal.sig = nuevo;
           nfinal = nuevo;
-        }
+        
          nanterior = nuevo;
     }
     /******************************* metodo que recorre la lista usuario *********************************/

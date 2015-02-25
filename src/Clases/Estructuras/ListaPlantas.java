@@ -14,15 +14,17 @@ public class ListaPlantas {
 
     public NodoPlantasZombies nfinal;
     public NodoPlantasZombies ninicio;
+    public NodoPlantasZombies nanterior;
     public String nom, tipa;
     public int puA, puD;
     public Icon imag;
     public String nlista = "lplanta";
     
-    public ListaPlantas ()
+    public ListaPlantas (String nombre)
     {
         nfinal = null;
         ninicio = null;
+        nlista = nombre;
     }
 
     /************************************ VERIFICA SI LA LISTA ESTA VACIA*************/
@@ -48,12 +50,21 @@ public class ListaPlantas {
         
         if (ListaPlantaVacia())
         {
+            nuevo.npadre = nlista;
             ninicio = nuevo;
             nfinal = nuevo;
         }
+        else
+        {
+            nuevo.npadre = nanterior.Nombre;
             nuevo.ant = nfinal;
             nfinal.sig = nuevo;
+             
+        }
+            nuevo.nhijo= nuevo.Nombre;
             nfinal = nuevo;
+            nanterior = nuevo;
+           
     }
     
     /*************************** METODO PARA RECORRER LA LISTA
