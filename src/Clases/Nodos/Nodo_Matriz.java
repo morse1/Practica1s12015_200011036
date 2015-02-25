@@ -17,7 +17,6 @@ public class Nodo_Matriz {
     public Nodo_Matriz abajo;
     public Icon imagen;
     public Estructuras objPlantas;
-    //public Lista_Zombies objZombies;
     public Estructuras objZombies;
     public String npadres;
     public String nhijo;

@@ -43,7 +43,6 @@ int contador=0;
         TfNombre = new javax.swing.JTextField();
         btnPlanta = new javax.swing.JButton();
         btnImagen = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         cbDefensa = new javax.swing.JComboBox();
         cbPAtaque = new javax.swing.JComboBox();
@@ -81,13 +80,6 @@ int contador=0;
             }
         });
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel5.setText("PLANTAS");
 
@@ -104,9 +96,6 @@ int contador=0;
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(212, 212, 212)
-                        .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,11 +111,7 @@ int contador=0;
                                         .addGroup(layout.createSequentialGroup()
                                             .addComponent(jLabel4)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(cbDefensa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addGap(16, 16, 16)
-                                            .addComponent(jButton1)
-                                            .addGap(0, 0, Short.MAX_VALUE)))
+                                            .addComponent(cbDefensa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGap(241, 241, 241)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
@@ -142,7 +127,11 @@ int contador=0;
                         .addComponent(cbAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(114, 114, 114)
                         .addComponent(btnPlanta, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(189, 189, 189))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,9 +139,7 @@ int contador=0;
                 .addGap(26, 26, 26)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnImagen)
                 .addGap(18, 18, 18)
@@ -201,11 +188,6 @@ int contador=0;
         }
     }//GEN-LAST:event_btnPlantaActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Creacion_Usuarios cu = new Creacion_Usuarios();
-        cu.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void btnPlantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPlantaMouseClicked
     }//GEN-LAST:event_btnPlantaMouseClicked
 
@@ -249,7 +231,6 @@ int contador=0;
     private javax.swing.JComboBox cbAtaque;
     private javax.swing.JComboBox cbDefensa;
     private javax.swing.JComboBox cbPAtaque;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

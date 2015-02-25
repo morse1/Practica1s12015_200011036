@@ -5,6 +5,7 @@ package practica1s12015_200011036;
 import Interfaz.Creacion_Usuarios;
 import Interfaz.CatalogoPlantas;
 import Interfaz.CatalogoZombies;
+import Interfaz.Dimensiones_Tablero;
 import Interfaz.Inicio;
 import Interfaz.TableroDeJuego;
 import Interfaz.Usuario_Plantas;
@@ -22,6 +23,7 @@ public class Practica1s12015_200011036 {
         //new CatalogoZombies().setVisible(true);      
         new Inicio().setVisible(true);
         //new TableroDeJuego().setVisible(true);
+        //new Dimensiones_Tablero().setVisible(true);
     }
     
 }

@@ -11,7 +11,7 @@ public class ListaUsuario {
     public Nodo_Usuario ninicio;
     public Nodo_Usuario nanterior;
     public String cantidad;
-    public String nlista = "lusuario";
+    public String nlista = "Usuario";
  
  
     

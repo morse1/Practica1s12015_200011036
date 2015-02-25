@@ -9,6 +9,7 @@ import Clases.Estructuras.Estructuras;
 import Clases.Global;
 //import javax.swing.ButtonGroup;
 import javax.swing.Icon;
+import javax.swing.JOptionPane;
 //import javax.swing.JOptionPane;
 
 /**
@@ -191,6 +192,12 @@ public Estructuras lzombies;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnZombieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZombieActionPerformed
+
+        if ( TfNombre.equals(""))
+        {
+            JOptionPane.showMessageDialog(null,"FAVOR LLENAR TODOS LOS DATOS");
+            
+        }else{
         int a = Global.getInstance().cantidad_Zombie;
         if (contador < a){
         contador++;
@@ -200,7 +207,7 @@ public Estructuras lzombies;
         {
         dispose();
        }
-                
+        }  
     }//GEN-LAST:event_btnZombieActionPerformed
 
     private void btnImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImagenActionPerformed
@@ -274,14 +281,11 @@ public void contar()
         pata = Integer.parseInt((String)cbPAtaque.getSelectedItem());
         //Lista_Zombies lz = lzombies;
         Estructuras lz = lzombies;
-//        Lista_Zombies lz = Global.getInstance().zombies;
-//        if (lz == null)
-//        {
-//            lz = new Lista_Zombies("z");
-//        }
+        
         lz.Insertar(lblImagen.getIcon(), TfNombre.getText(), TipoAtaque ,pdef, pata,contador);
         Global.getInstance().zombies = lz;
         TfNombre.setText("");
         lblImagen.setIcon(null);
+        
 }
 }

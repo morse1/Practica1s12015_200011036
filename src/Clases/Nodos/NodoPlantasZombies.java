@@ -1,5 +1,6 @@
 package Clases.Nodos;
 
+import Clases.Estructuras.Estructuras;
 import javax.swing.Icon;
 /**
  * @author MorseIván
@@ -16,6 +17,7 @@ public class NodoPlantasZombies {
     public String npadre;
     public String nhijo;
     public int indice;
+    public Estructuras objPlanta;
 
 public NodoPlantasZombies(Icon im, String nom, String ta, int pa, int pd, int in)
  {
@@ -25,5 +27,6 @@ public NodoPlantasZombies(Icon im, String nom, String ta, int pa, int pd, int in
     Puntos_Ataque = pa;
     Puntos_Defensa = pd;
     indice = in;
+    objPlanta = new Estructuras(nom);
  }
 }

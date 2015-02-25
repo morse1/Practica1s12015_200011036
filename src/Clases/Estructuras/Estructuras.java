@@ -14,7 +14,7 @@ public class Estructuras {
     public String nom, tipa;
     public int puA, puD;
     public Icon imag;
-    public String nlista = "lplanta";
+    public String nlista = "Raiz";
     
     public Estructuras (String nombre)
     {
@@ -86,6 +86,7 @@ public class Estructuras {
           nfinal = null;
       }
       
+      /*************************** METODO PARA SACAR UN NODO DE LA LISTA ************************************/
       public void sacarLista()
       {
             
@@ -101,7 +102,7 @@ public class Estructuras {
             }
       }
       
-      
+     /*************************** METODO PARA SACAR NODO DE LA LISTA TIPO COLA ************************************/
       public void SacarCola()
       {
       if (ninicio != null )
@@ -115,6 +116,7 @@ public class Estructuras {
         }
       }
       
+     /*************************** METODO PARA SACAR NODO DE LA LISTA TIPO PILA ************************************/
       public void SacarPila ()
     {
         if (nfinal != null)

@@ -3,7 +3,6 @@ package Clases.Nodos;
  * @author MorseIván
  */
 import Clases.Estructuras.Estructuras;
-//import Clases.Estructuras.Lista_Zombies;
 
 public class Nodo_Usuario {
     
@@ -14,7 +13,6 @@ public class Nodo_Usuario {
     public Nodo_Usuario sig;
     public Nodo_Usuario ant;
     public Estructuras objplantas;
-  //  public Lista_Zombies objzombies;
     public Estructuras objzombies;
     public String npadre;
     public String nhijo;
@@ -29,7 +27,6 @@ public class Nodo_Usuario {
         sig = null;
         ant =  null;
         objplantas = new Estructuras(nom);
-        //objzombies = new Lista_Zombies(nom);
         objzombies = new Estructuras(nom);
     }
 }

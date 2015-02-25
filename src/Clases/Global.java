@@ -31,17 +31,15 @@ public class Global {
     
     public ListaUsuario usuario;
     public Estructuras plantas;
-//    public Lista_Zombies zombies;
     public Estructuras zombies;
     public Matriz tablero;
     public Estructuras cola;
     public Estructuras pila;
-//    public Cola cola;
-    //public Pila pila;
     public int cantidad_Planta;
     public String nombre_Us_Planta;
     public int cantidad_Zombie;
     public String nombre_Us_Zombie;
-     
+    public int Col;
+    public int fil;
    
 }
