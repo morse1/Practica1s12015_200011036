@@ -18,7 +18,8 @@ public class Nodo_Matriz {
     public Nodo_Matriz abajo;
     public ListaPlantas objPlantas;
     public Lista_Zombies objZombies;
-    
+    public String npadres;
+    public String nhijo;
     
     public Nodo_Matriz()
     {

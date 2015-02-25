@@ -20,6 +20,8 @@ public class NodoPlantasZombies {
     public int Puntos_Defensa;
     public NodoPlantasZombies sig;
     public NodoPlantasZombies ant;
+    public String npadre;
+    public String nhijo;
     
 
 public NodoPlantasZombies(Icon im, String nom, String ta, int pa, int pd)

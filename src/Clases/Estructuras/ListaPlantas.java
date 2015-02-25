@@ -17,6 +17,7 @@ public class ListaPlantas {
     public String nom, tipa;
     public int puA, puD;
     public Icon imag;
+    public String nlista = "lplanta";
     
     public ListaPlantas ()
     {

@@ -9,7 +9,11 @@ public class ListaUsuario {
 
     public Nodo_Usuario nfinal;
     public Nodo_Usuario ninicio;
+    public Nodo_Usuario nanterior;
     public String cantidad;
+    public String nlista = "lusuario";
+ 
+ 
     
     /*********************** constructor de la clase Lista **********************************************/
     
@@ -42,14 +46,18 @@ public class ListaUsuario {
         if (ListaVacia())
         {
          ninicio = nuevo;
-         nfinal = nuevo;  
+         ninicio.npadre = nlista;
+         nfinal = nuevo; 
         }
         else
         {
+          nanterior.nhijo = nuevo.Nombre;
+          nuevo.npadre = nuevo.Nombre;
           nuevo.ant = nfinal;
           nfinal.sig = nuevo;
           nfinal = nuevo;
         }
+         nanterior = nuevo;
     }
     /******************************* metodo que recorre la lista usuario *********************************/
     

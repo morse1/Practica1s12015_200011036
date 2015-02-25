@@ -15,7 +15,8 @@ public class Nodo_Usuario {
     public Nodo_Usuario ant;
     public ListaPlantas objplantas;
     public Lista_Zombies objzombies;
-   
+    public String npadre;
+    public String nhijo;
   
     
     public Nodo_Usuario(String nom, int cant, String camp, int tip)
