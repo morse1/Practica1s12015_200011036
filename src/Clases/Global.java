@@ -41,5 +41,5 @@ public class Global {
     public String nombre_Us_Zombie;
     public int Col;
     public int fil;
-   
+    public String tipoImagen;
 }

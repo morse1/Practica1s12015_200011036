@@ -15,15 +15,20 @@ public class Nodo_Matriz {
     public Nodo_Matriz ant;
     public Nodo_Matriz arriba;
     public Nodo_Matriz abajo;
-    public Icon imagen;
-    public Estructuras objPlantas;
-    public Estructuras objZombies;
+    public Nodo_Matriz aux1;
+    public Nodo_Matriz aux2;
+    public Estructuras personaje;
     public String npadres;
     public String nhijo;
     
-    public Nodo_Matriz()
-    {
-        
+    public Nodo_Matriz(int x, int y, int tipo)
+    {   sig =null;
+        ant = null;
+        arriba = null;
+        abajo = null;
+        fila = x;
+        columna = y;
+        personaje = new Estructuras("personaje");
     }
     
 }

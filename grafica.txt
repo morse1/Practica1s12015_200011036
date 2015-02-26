@@ -1,0 +1,6 @@
+Digraph g {Usuario->momo;
+momo->mariajose;
+momo->ivan;
+ivan->juana;
+juana->maria;
+}

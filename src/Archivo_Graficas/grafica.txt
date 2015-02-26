@@ -1,0 +1,3 @@
+Digraph g {Usuario->sofia;
+sofia->johanna;
+}

@@ -4,6 +4,7 @@ import javax.swing.JOptionPane;
 
 
 
+
 /**
  * @author MorseIván
  */
@@ -24,16 +25,11 @@ public class Archivos {
             escribir = new FileWriter (archivo);
             bf = new BufferedWriter(escribir);
             pe = new PrintWriter(bf);
-            
-            
-           
         }
         catch (Exception e)
         {
             JOptionPane.showMessageDialog(null, "Se produjo un error:  " +  e);
         }
-            
-        
     }
     
     public void Escribir(String texto)
@@ -49,14 +45,21 @@ public class Archivos {
         }
     }
     
-    public void Graficar ()
+    
+    public void abrir()
+    {
+        
+    }
+    
+    public void Graficar (String txt, String jpg)
     {
         try {
       
       String dotPath = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
+   
       
-      String fileInputPath = "C:\\Users\\MorseIván\\Documents\\NetBeansProjects\\Practica1s12015_200011036\\src\\Archivo_Graficas\\grafica.txt";
-      String fileOutputPath = "C:\\Users\\MorseIván\\Documents\\NetBeansProjects\\Practica1s12015_200011036\\src\\Archivo_Graficas\\grafica.jpg";
+      String fileInputPath = "C:\\Varios\\" + txt + ".txt";
+      String fileOutputPath = "C:\\varios\\" + jpg + ".jpg";
       
       String tParam = "-Tjpg";
       String tOParam = "-o";
@@ -71,7 +74,7 @@ public class Archivos {
       Runtime rt = Runtime.getRuntime();
       
       rt.exec( cmd );
-      
+      Thread.sleep(300);
     } catch (Exception ex) {
       ex.printStackTrace();
     } finally {

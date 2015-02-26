@@ -14,6 +14,9 @@ public class TableroDeJuego extends javax.swing.JFrame {
      */
     public TableroDeJuego() {
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        
         for (int i = 0; i <Global.getInstance().fil; i++)
         {
             for (int j = 0; j<Global.getInstance().Col; j++)
@@ -22,6 +25,7 @@ public class TableroDeJuego extends javax.swing.JFrame {
             setLayout(null);  
             a = new JLabel();
             a.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+            a.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Fondos/fondo1.png")));
             a.setBounds(27+(i*50),130+(j*50), 50, 50);
             
             add(a);
