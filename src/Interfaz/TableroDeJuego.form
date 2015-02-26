@@ -52,20 +52,20 @@
                 <Property name="text" type="java.lang.String" value="Sacar de..."/>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="SacarCola">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Cola"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SacarColaActionPerformed"/>
-                  </Events>
-                </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="SacarPila">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Pila"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SacarPilaActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="SacarCola">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cola"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SacarColaActionPerformed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>

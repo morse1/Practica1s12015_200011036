@@ -80,8 +80,8 @@ public class TableroDeJuego extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        SacarCola = new javax.swing.JMenuItem();
         SacarPila = new javax.swing.JMenuItem();
+        SacarCola = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         GrafUs = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -204,14 +204,6 @@ public class TableroDeJuego extends javax.swing.JFrame {
 
         jMenu4.setText("Sacar de...");
 
-        SacarCola.setText("Cola");
-        SacarCola.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SacarColaActionPerformed(evt);
-            }
-        });
-        jMenu4.add(SacarCola);
-
         SacarPila.setText("Pila");
         SacarPila.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +211,14 @@ public class TableroDeJuego extends javax.swing.JFrame {
             }
         });
         jMenu4.add(SacarPila);
+
+        SacarCola.setText("Cola");
+        SacarCola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SacarColaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(SacarCola);
 
         ComenzarJuego.add(jMenu4);
 
