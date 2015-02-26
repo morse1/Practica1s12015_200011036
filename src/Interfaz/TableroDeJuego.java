@@ -56,6 +56,8 @@ public class TableroDeJuego extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -74,8 +76,12 @@ public class TableroDeJuego extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         ComenzarJuego = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        SacarCola = new javax.swing.JMenuItem();
+        SacarPila = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         GrafUs = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
@@ -86,6 +92,8 @@ public class TableroDeJuego extends javax.swing.JFrame {
         GrafMatriz = new javax.swing.JMenuItem();
 
         jMenuItem5.setText("jMenuItem5");
+
+        jMenuItem3.setText("jMenuItem3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -167,12 +175,14 @@ public class TableroDeJuego extends javax.swing.JFrame {
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        ComenzarJuego.setText("Sacar");
+        ComenzarJuego.setText("Personajes");
         ComenzarJuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComenzarJuegoActionPerformed(evt);
             }
         });
+
+        jMenu1.setText("Ingresar a...");
 
         jMenuItem1.setText("Pila");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -180,7 +190,7 @@ public class TableroDeJuego extends javax.swing.JFrame {
                 jMenuItem1ActionPerformed(evt);
             }
         });
-        ComenzarJuego.add(jMenuItem1);
+        jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Cola");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -188,7 +198,29 @@ public class TableroDeJuego extends javax.swing.JFrame {
                 jMenuItem2ActionPerformed(evt);
             }
         });
-        ComenzarJuego.add(jMenuItem2);
+        jMenu1.add(jMenuItem2);
+
+        ComenzarJuego.add(jMenu1);
+
+        jMenu4.setText("Sacar de...");
+
+        SacarCola.setText("Cola");
+        SacarCola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SacarColaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(SacarCola);
+
+        SacarPila.setText("Pila");
+        SacarPila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SacarPilaActionPerformed(evt);
+            }
+        });
+        jMenu4.add(SacarPila);
+
+        ComenzarJuego.add(jMenu4);
 
         jMenuBar1.add(ComenzarJuego);
 
@@ -450,6 +482,42 @@ public class TableroDeJuego extends javax.swing.JFrame {
         System.out.println("Nombre: " + c.toString());
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void SacarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SacarColaActionPerformed
+          Estructuras c = Global.getInstance().cola;
+          c.SacarCola();
+           StringBuilder s = new StringBuilder ();
+       
+       Estructuras lpla = Global.getInstance().cola;
+       NodoPlantasZombies npz = lpla.ninicio;
+       ar.CrearArchivo("C:\\Varios\\MetodoCola.txt");
+       
+       while (npz != null){
+       s.append(npz.npadre + " ->" + npz.nhijo + "; \n");
+       npz = npz.sig;
+       }
+       ar.Escribir("Digraph g {" + s.toString()+"}");
+       ar.Graficar("MetodoCola","GCola");
+       
+       
+    }//GEN-LAST:event_SacarColaActionPerformed
+
+    private void SacarPilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SacarPilaActionPerformed
+          Estructuras c = Global.getInstance().pila;
+          c.SacarPila();
+           StringBuilder s = new StringBuilder ();
+       
+       Estructuras lpla = Global.getInstance().pila;
+       NodoPlantasZombies npz = lpla.nfinal;
+       ar.CrearArchivo("C:\\Varios\\MetodoCola.txt");
+       
+       while (npz != null){
+       s.append(npz.nhijo + " ->" + npz.npadre + "; \n");
+       npz = npz.ant;
+       }
+       ar.Escribir("Digraph g {" + s.toString()+"}");
+       ar.Graficar("MetodoCola","GCola");
+    }//GEN-LAST:event_SacarPilaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -494,6 +562,8 @@ public class TableroDeJuego extends javax.swing.JFrame {
     private javax.swing.JMenuItem GrafPlantas;
     private javax.swing.JMenuItem GrafUs;
     private javax.swing.JMenuItem GrafZombies;
+    private javax.swing.JMenuItem SacarCola;
+    private javax.swing.JMenuItem SacarPila;
     private javax.swing.JLabel UsPlantas;
     private javax.swing.JLabel UsZombies;
     private javax.swing.JLabel jLabel1;
@@ -508,14 +578,18 @@ public class TableroDeJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 
 

@@ -11,7 +11,7 @@ import java.io.*;
 import javax.imageio.*;
 import javax.swing.*;
 import Clases.Global;
-import java.awt.BorderLayout;
+
 /**
  *
  * @author MorseIván

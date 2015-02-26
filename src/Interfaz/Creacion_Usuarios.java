@@ -1,19 +1,11 @@
 
 package Interfaz;
 
-//import Clases.Estructuras.Cola;
 import Clases.Archivos;
 import Clases.Global;
 import Clases.Estructuras.ListaUsuario;
 import Clases.Estructuras.Estructuras;
-
-//import Clases.Estructuras.Lista_Zombies;
-//import Clases.Estructuras.Pila;
-import Clases.Nodos.NodoPlantasZombies;
 import Clases.Nodos.Nodo_Usuario;
-
-import Clases.Tiempo;
-import javax.swing.JOptionPane;
 
 /**
  * @author MorseIván
@@ -45,16 +37,9 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
         btnJugadorPlantas = new javax.swing.JButton();
         btnJugadorZombies = new javax.swing.JButton();
         btnEliminarDatosUsuarios = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        area = new javax.swing.JTextArea();
         btnInsertarPlanta = new javax.swing.JButton();
         btnInsertarZombies = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        btnComenzar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -87,10 +72,6 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
             }
         });
 
-        area.setColumns(20);
-        area.setRows(5);
-        jScrollPane1.setViewportView(area);
-
         btnInsertarPlanta.setText("Insertar Plantas");
         btnInsertarPlanta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,42 +88,7 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Presentaciones/Presentacion.png"))); // NOI18N
 
-        btnComenzar.setText("Comenzar Extraccion Plantas (prueba)");
-        btnComenzar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComenzarActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Comenzar Extraccion Zombies (prueba)");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("Grafico");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton2.setText("Graficar Plantas");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Graficar Zombies");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
-        jButton5.setText("jButton5");
+        jButton5.setText("Comenzar Juego");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -154,45 +100,21 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnComenzar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnEliminarDatosUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton5)
-                                        .addGap(78, 78, 78)))
-                                .addComponent(jButton3)
-                                .addGap(25, 25, 25))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnJugadorPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnInsertarPlanta))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton1)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(btnJugadorZombies, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(79, 79, 79)
-                                                .addComponent(btnInsertarZombies)))
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton2)
-                                    .addComponent(jButton4))
-                                .addGap(33, 33, 33))))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 625, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(btnEliminarDatosUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnInsertarZombies, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnJugadorZombies, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                    .addComponent(btnJugadorPlantas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnInsertarPlanta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,36 +122,20 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnJugadorPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnInsertarPlanta))
-                                .addGap(23, 23, 23)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnJugadorZombies)
-                                    .addComponent(jButton2)))
-                            .addComponent(btnInsertarZombies))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jButton4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnComenzar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnEliminarDatosUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton5)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton3)
-                                .addGap(14, 14, 14))))
+                        .addGap(36, 36, 36)
+                        .addComponent(btnJugadorPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnJugadorZombies)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnInsertarZombies)
+                        .addGap(10, 10, 10)
+                        .addComponent(btnInsertarPlanta))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnEliminarDatosUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -248,8 +154,12 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
 
     private void btnEliminarDatosUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarDatosUsuariosActionPerformed
         ListaUsuario l = Global.getInstance().usuario;
+        Estructuras p = Global.getInstance().plantas;
+        Estructuras z = Global.getInstance().zombies;
         l.vaciarLista();
-        area.setText("Lista vacia");
+        p.vaciarEstructura();
+        z.vaciarEstructura();
+        
     }//GEN-LAST:event_btnEliminarDatosUsuariosActionPerformed
 
     
@@ -294,127 +204,6 @@ public class Creacion_Usuarios extends javax.swing.JFrame {
       
     }//GEN-LAST:event_btnInsertarZombiesActionPerformed
 
-    private void btnComenzarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComenzarActionPerformed
-        Tiempo t = new Tiempo();
-        //ListaPlantas lp = Global.getInstance().plantas;
-        Estructuras c = Global.getInstance().cola;
-        
-        int a = (Integer)Global.getInstance().cantidad_Planta ;
-        
-        for (int i = 1; i<=a; i++)
-        {
-            
-      Global.getInstance().plantas.sacarLista();
-      t.sacar();
-
-        if (c == null)
-       {
-            c = new Estructuras(Global.getInstance().nombre_Us_Planta);
-        }
-    c.Insertar(Global.getInstance().plantas.imag, Global.getInstance().plantas.nom,Global.getInstance().plantas.tipa,Global.getInstance().plantas.puA , Global.getInstance().plantas.puD, 1 );
-    Global.getInstance().cola = c;
-      
-        }
-    }//GEN-LAST:event_btnComenzarActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Tiempo t = new Tiempo();
-        
-        Estructuras p = Global.getInstance().pila;
-        
-        int a = (Integer)Global.getInstance().cantidad_Zombie ;
-        
-        for (int i = 1; i<=a; i++)
-        {
-            
-      Global.getInstance().zombies.sacarLista();
-      t.sacar();
-
-        if (p == null)
-       {
-            p = new Estructuras(Global.getInstance().nombre_Us_Zombie);
-        }
-    p.Insertar(Global.getInstance().zombies.imag, Global.getInstance().zombies.nom,Global.getInstance().zombies.tipa,Global.getInstance().zombies.puA , Global.getInstance().zombies.puD ,1);
-    Global.getInstance().pila = p;
-      
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        MostrarGrafica mg = new MostrarGrafica();  
-        ar.CrearArchivo("C:\\Varios\\MetodoUsuario.txt");
-        
-        StringBuilder sb = new StringBuilder();
-        ListaUsuario lobj = Global.getInstance().usuario;
-        Nodo_Usuario nus = lobj.ninicio;
-        NodoPlantasZombies npz;
-        Estructuras lpla;
-        Estructuras lzob;
-        while ( nus != null)
-        {
-            sb.append ( nus.npadre + "->" + nus.nhijo + ";\n"  );
-            lpla = nus.objplantas;
-            npz = lpla.ninicio;
-            while ( npz != null)
-            {
-             sb.append ( npz.npadre + "->" + npz.nhijo + ";\n"  );
-                npz = npz.sig;
-            }
-            lzob = nus.objzombies;
-            npz = lzob.ninicio;
-            while ( npz != null)
-            {
-             sb.append ( npz.npadre + "->" + npz.nhijo + ";\n"  );
-                npz = npz.sig;
-            }
-            nus = nus.sig;
-         
-        }
-        
-        ar.Escribir("Digraph g {"+sb.toString()+"}");
-        
-        area.setText(sb.toString());
-        ar.Graficar("MetodoUsuario","GUsuario");
-        mg.mostrarGrafica(Global.getInstance().tipoImagen ="GUsuario");
-        mg.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       StringBuilder s = new StringBuilder ();
-       MostrarGrafica mg1 = new MostrarGrafica();  
-       Estructuras lpla = Global.getInstance().plantas;
-       NodoPlantasZombies npz = lpla.ninicio;
-       ar.CrearArchivo("C:\\Varios\\MetodoPlantas.txt");
-       
-       while (npz != null){
-       s.append(npz.npadre + " ->" + npz.nhijo + "; \n");
-       npz = npz.sig;
-       }
-       ar.Escribir("Digraph g {" + s.toString()+"}");
-       ar.Graficar("MetodoPlantas","GPlantas");
-       area.setText(s.toString());
-       mg1.mostrarGrafica(Global.getInstance().tipoImagen = "GPlantas");
-       mg1.setVisible(true);
-       this.setVisible(true);
-       
-       
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       StringBuilder s = new StringBuilder ();
-       Estructuras lzb = Global.getInstance().zombies;
-       NodoPlantasZombies npz = lzb.ninicio;
-       
-       while (npz != null){
-       s.append(npz.npadre + " ->" + npz.nhijo + "; \n");
-       npz = npz.sig;
-       }
-       
-       area.setText(s.toString());
-       
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
 Dimensiones_Tablero dt = new Dimensiones_Tablero();
 dt.setVisible(true);
@@ -456,20 +245,13 @@ dt.setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea area;
-    private javax.swing.JButton btnComenzar;
     private javax.swing.JButton btnEliminarDatosUsuarios;
     private javax.swing.JButton btnInsertarPlanta;
     private javax.swing.JButton btnInsertarZombies;
     private javax.swing.JButton btnJugadorPlantas;
     private javax.swing.JButton btnJugadorZombies;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
 

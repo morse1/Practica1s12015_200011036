@@ -44,7 +44,6 @@ public Estructuras lzombies;
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         lblImagen = new javax.swing.JLabel();
         TfNombre = new javax.swing.JTextField();
@@ -60,13 +59,6 @@ public Estructuras lzombies;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PLANTAS VS ZOMBIES GUATEMALTECO 1.0");
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jLabel4.setText("Putos de Defensa:");
 
@@ -142,8 +134,7 @@ public Estructuras lzombies;
                     .addGroup(layout.createSequentialGroup()
                         .addGap(159, 159, 159)
                         .addComponent(btnImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
@@ -153,14 +144,9 @@ public Estructuras lzombies;
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(lblImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnImagen))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addComponent(jButton1)))
-                .addGap(31, 31, 31)
+                .addGap(18, 18, 18)
+                .addComponent(btnImagen)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -183,13 +169,6 @@ public Estructuras lzombies;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Creacion_Usuarios cu = new Creacion_Usuarios();
-        cu.setVisible(true);        
-        
-      
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnZombieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZombieActionPerformed
 
@@ -265,7 +244,6 @@ public Estructuras lzombies;
     private javax.swing.JComboBox cbAtaque;
     private javax.swing.JComboBox cbDefensa;
     private javax.swing.JComboBox cbPAtaque;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
