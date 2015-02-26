@@ -485,6 +485,8 @@ public class TableroDeJuego extends javax.swing.JFrame {
     private void SacarColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SacarColaActionPerformed
           Estructuras c = Global.getInstance().cola;
           c.SacarCola();
+          Global.getInstance().cola = c;
+          
            StringBuilder s = new StringBuilder ();
        
        Estructuras lpla = Global.getInstance().cola;
@@ -503,7 +505,8 @@ public class TableroDeJuego extends javax.swing.JFrame {
 
     private void SacarPilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SacarPilaActionPerformed
           Estructuras c = Global.getInstance().pila;
-          c.SacarPila();
+          c.SacarPila() ;
+          Global.getInstance().pila = c;
            StringBuilder s = new StringBuilder ();
        
        Estructuras lpla = Global.getInstance().pila;
