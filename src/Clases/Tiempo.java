@@ -8,7 +8,7 @@ public class Tiempo {
     {
          try
     {
-        Thread.sleep(10000);
+        Thread.sleep(300);
     }catch (InterruptedException e)
         {
         }
