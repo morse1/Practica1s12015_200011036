@@ -1,7 +1,14 @@
 package Interfaz;
+import Clases.Archivos;
+import Clases.Estructuras.Estructuras;
+import Clases.Estructuras.ListaUsuario;
+import Clases.Estructuras.Matriz;
 import java.awt.Color;
 import javax.swing.*;
 import Clases.Global;
+import Clases.Nodos.NodoPlantasZombies;
+import Clases.Nodos.Nodo_Usuario;
+import Clases.Tiempo;
 
 /**
  *
@@ -9,6 +16,8 @@ import Clases.Global;
  */
 public class TableroDeJuego extends javax.swing.JFrame {
     private JLabel a;
+    Archivos ar = new Archivos();
+    Matriz m;
     /**
      * Creates new form TipoMatriz
      */
@@ -46,6 +55,7 @@ public class TableroDeJuego extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem5 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -62,6 +72,18 @@ public class TableroDeJuego extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        ComenzarJuego = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        GrafUs = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        GrafPlantas = new javax.swing.JMenuItem();
+        GrafZombies = new javax.swing.JMenuItem();
+        GrafPila = new javax.swing.JMenuItem();
+        GrafCola = new javax.swing.JMenuItem();
+        GrafMatriz = new javax.swing.JMenuItem();
+
+        jMenuItem5.setText("jMenuItem5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -143,6 +165,62 @@ public class TableroDeJuego extends javax.swing.JFrame {
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        ComenzarJuego.setText("Comenzar");
+        ComenzarJuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComenzarJuegoActionPerformed(evt);
+            }
+        });
+        jMenuBar1.add(ComenzarJuego);
+
+        jMenu2.setText("Graficas");
+
+        GrafUs.setText("Grafica Usarios");
+        GrafUs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GrafUsActionPerformed(evt);
+            }
+        });
+        jMenu2.add(GrafUs);
+
+        jMenu3.setText("Grafica Catalogos");
+
+        GrafPlantas.setText("Plantas");
+        GrafPlantas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GrafPlantasActionPerformed(evt);
+            }
+        });
+        jMenu3.add(GrafPlantas);
+
+        GrafZombies.setText("Zombies");
+        GrafZombies.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GrafZombiesActionPerformed(evt);
+            }
+        });
+        jMenu3.add(GrafZombies);
+
+        jMenu2.add(jMenu3);
+
+        GrafPila.setText("Grafica Pila");
+        GrafPila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GrafPilaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(GrafPila);
+
+        GrafCola.setText("Grafica Cola");
+        jMenu2.add(GrafCola);
+
+        GrafMatriz.setText("Grafica Matriz");
+        jMenu2.add(GrafMatriz);
+
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -182,11 +260,117 @@ public class TableroDeJuego extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(390, Short.MAX_VALUE))
+                .addContainerGap(369, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void GrafUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrafUsActionPerformed
+ MostrarGrafica mg = new MostrarGrafica();  
+        ar.CrearArchivo("C:\\Varios\\MetodoUsuario.txt");
+        
+        StringBuilder sb = new StringBuilder();
+        ListaUsuario lobj = Global.getInstance().usuario;
+        Nodo_Usuario nus = lobj.ninicio;
+        NodoPlantasZombies npz;
+        Estructuras lpla;
+        Estructuras lzob;
+        while ( nus != null)
+        {
+            sb.append ( nus.npadre + "->" + nus.nhijo + ";\n"  );
+            lpla = nus.objplantas;
+            npz = lpla.ninicio;
+            while ( npz != null)
+            {
+             sb.append ( npz.npadre + "->" + npz.nhijo + ";\n"  );
+                npz = npz.sig;
+            }
+            lzob = nus.objzombies;
+            npz = lzob.ninicio;
+            while ( npz != null)
+            {
+             sb.append ( npz.npadre + "->" + npz.nhijo + ";\n"  );
+                npz = npz.sig;
+            }
+            nus = nus.sig;
+         
+        }
+        
+        ar.Escribir("Digraph g {"+sb.toString()+"}");
+        ar.Graficar("MetodoUsuario","GUsuario");
+        mg.mostrarGrafica("GUsuario");
+        mg.setVisible(true);
+    }//GEN-LAST:event_GrafUsActionPerformed
+
+    private void GrafPlantasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrafPlantasActionPerformed
+       StringBuilder s = new StringBuilder ();
+       MostrarGrafica mg1 = new MostrarGrafica();  
+       Estructuras lpla = Global.getInstance().plantas;
+       NodoPlantasZombies npz = lpla.ninicio;
+       ar.CrearArchivo("C:\\Varios\\MetodoPlantas.txt");
+       
+       while (npz != null){
+       s.append(npz.npadre + " ->" + npz.nhijo + "; \n");
+       npz = npz.sig;
+       }
+       ar.Escribir("Digraph g {" + s.toString()+"}");
+       ar.Graficar("MetodoPlantas","GPlantas");
+       mg1.mostrarGrafica( "GPlantas");
+       mg1.setVisible(true);
+       this.setVisible(true);
+       
+    }//GEN-LAST:event_GrafPlantasActionPerformed
+
+    private void GrafPilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrafPilaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GrafPilaActionPerformed
+
+    private void GrafZombiesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrafZombiesActionPerformed
+       /*StringBuilder s = new StringBuilder ();
+       Estructuras lzb = Global.getInstance().zombies;
+       NodoPlantasZombies npz = lzb.ninicio;
+       
+       while (npz != null){
+       s.append(npz.npadre + " ->" + npz.nhijo + "; \n");
+       npz = npz.sig;
+       }*/
+       StringBuilder s = new StringBuilder ();
+       MostrarGrafica mg1 = new MostrarGrafica();  
+       Estructuras lpla = Global.getInstance().zombies;
+       NodoPlantasZombies npz = lpla.ninicio;
+       ar.CrearArchivo("C:\\Varios\\MetodoZombies.txt");
+       
+       while (npz != null){
+       s.append(npz.npadre + " ->" + npz.nhijo + "; \n");
+       npz = npz.sig;
+       }
+       ar.Escribir("Digraph g {" + s.toString()+"}");
+       ar.Graficar("MetodoZombies","GZombies");
+       mg1.mostrarGrafica( "GZombies");
+       mg1.setVisible(true);
+       this.setVisible(true);
+       
+
+    }//GEN-LAST:event_GrafZombiesActionPerformed
+
+    private void ComenzarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComenzarJuegoActionPerformed
+        Tiempo t = new Tiempo();
+        Estructuras c = Global.getInstance().cola;
+        int a = (Integer)Global.getInstance().cantidad_Planta ;
+        
+        for (int i = 1; i<=a; i++)
+        {
+            Global.getInstance().plantas.sacarLista();
+            t.sacar();
+        if (c == null)
+        {
+            c = new Estructuras(Global.getInstance().nombre_Us_Planta);
+        }
+            c.Insertar(Global.getInstance().plantas.imag, Global.getInstance().plantas.nom,Global.getInstance().plantas.tipa,Global.getInstance().plantas.puA , Global.getInstance().plantas.puD, 1 );
+            Global.getInstance().cola = c;
+        }
+    }//GEN-LAST:event_ComenzarJuegoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -225,6 +409,13 @@ public class TableroDeJuego extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu ComenzarJuego;
+    private javax.swing.JMenuItem GrafCola;
+    private javax.swing.JMenuItem GrafMatriz;
+    private javax.swing.JMenuItem GrafPila;
+    private javax.swing.JMenuItem GrafPlantas;
+    private javax.swing.JMenuItem GrafUs;
+    private javax.swing.JMenuItem GrafZombies;
     private javax.swing.JLabel UsPlantas;
     private javax.swing.JLabel UsZombies;
     private javax.swing.JLabel jLabel1;
@@ -239,7 +430,13 @@ public class TableroDeJuego extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     // End of variables declaration//GEN-END:variables
+
+
 }

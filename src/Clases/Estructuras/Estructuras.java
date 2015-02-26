@@ -98,6 +98,7 @@ public class Estructuras {
                 puD = ninicio.Puntos_Defensa;
                 imag = ninicio.Imagen;
                 ninicio = ninicio.sig;
+                System.out.println("Nombre" + nom);
                 
             }
       }

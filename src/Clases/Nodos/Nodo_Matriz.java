@@ -21,14 +21,14 @@ public class Nodo_Matriz {
     public String npadres;
     public String nhijo;
     
-    public Nodo_Matriz(int x, int y, int tipo)
+    public Nodo_Matriz(int x, int y, String nom)
     {   sig =null;
         ant = null;
         arriba = null;
         abajo = null;
         fila = x;
         columna = y;
-        personaje = new Estructuras("personaje");
+        personaje = new Estructuras(nom);
     }
     
 }

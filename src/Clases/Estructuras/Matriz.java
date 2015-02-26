@@ -52,4 +52,17 @@ public class Matriz {
             ultimo = nuevo;
         } 
        }
+    
+    public void llenarMatriz (int filas , int columnas)
+    {
+        for (int i = 1; i<= filas; i++)
+        {
+            for (int j=1; j<=columnas; j++)
+            {
+                Nodo_Matriz nuevo= new Nodo_Matriz(i,j, "");
+                InsertarMatriz (nuevo);
+            }
+        }
+        
+    }
 }

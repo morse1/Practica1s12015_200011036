@@ -2,6 +2,7 @@
 package practica1s12015_200011036;
 
 
+import Clases.Estructuras.Matriz;
 import Interfaz.Creacion_Usuarios;
 import Interfaz.CatalogoPlantas;
 import Interfaz.CatalogoZombies;
@@ -26,6 +27,12 @@ public class Practica1s12015_200011036 {
         //new TableroDeJuego().setVisible(true);
         //new Dimensiones_Tablero().setVisible(true);
         //new MostrarGrafica().setVisible(true);
+        //Matriz ma = new Matriz(5,3);
+        //ma.llenarMatriz(5, 3);
+        
+        
+        
+        
     }
     
 }
